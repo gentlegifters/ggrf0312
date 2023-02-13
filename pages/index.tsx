@@ -33,7 +33,7 @@ export default function Home() {
         <meta property="og:title" content="GGRF0312@경성홀" key="ogtitle" />
         <meta
           property="og:description"
-          content="3월 12일 GGRF에 초대합니다."
+          content="3월 12일 Gentle Gifters Rock Festival에 초대합니다."
           key="ogdesc"
         />
         <script
@@ -62,7 +62,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="sm:hidden block text-sm font-semibold text-left">
-                      GGRF_0312
+                      GGRF0312
                     </div>
                   </div>
                 </Link>
@@ -132,9 +132,9 @@ export default function Home() {
                 <div className="text-sm font-medium mt-4 text-left">경성홀</div>
                 {/* <KakaoMap address="서울 신촌로10길 9" /> */}
               </div>
-              <div className="mt-32 px-4 sm:px-0">
+              {/* <div className="mt-32 px-4 sm:px-0">
                 <InstaEmbed />
-              </div>
+              </div> */}
             </div>
             <div className="footer my-16">
               <div className="text-sm font-medium mt-8 text-left px-4 sm:px-0 block text-gray-800">
