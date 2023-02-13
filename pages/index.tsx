@@ -5,11 +5,20 @@ import Link from "next/link";
 import { passOutType } from "@/constants/ggrf0312";
 import { PartyForm } from "@/components/party0312/Form";
 import { InstaEmbed } from "@/components/party0312/InstaEmbed";
-// import KakaoMap from "@/components/party0312/KakaoMap";
+import KakaoMap from "@/components/party0312/KakaoMap";
+import WebShare from "@/components/party0312/share";
+import { useRef, useState } from "react";
 
 export default function Home() {
   const Contents = ["영화 상영", "스윙댄스 강습", "소셜 파티", "공연"];
   const kakaoJsKey = process.env.NEXT_PUBLIC_KAKAO_CLIENT_ID;
+  const contentRef = useRef<null | HTMLDivElement>(null);
+  const placeRef = useRef<null | HTMLDivElement>(null);
+  const registerRef = useRef<null | HTMLDivElement>(null);
+  const [ref, setRef] = useState(contentRef);
+  const executeScroll = () => {
+    ref?.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -67,9 +76,22 @@ export default function Home() {
                   </div>
                 </Link>
                 <div className="space-x-4 text-xs text-gray-800">
-                  <button className="font-semibold">내용</button>
-                  <button className="font-semibold">장소</button>
-                  <button className="rounded-md px-2.5 py-2 bg-gray-800 text-white">
+                  <button
+                    className="font-semibold"
+                    onClick={() => setRef(contentRef)}
+                  >
+                    내용
+                  </button>
+                  <button
+                    className="font-semibold"
+                    onClick={() => setRef(placeRef)}
+                  >
+                    장소
+                  </button>
+                  <button
+                    className="rounded-md px-2.5 py-2 bg-gray-800 text-white"
+                    onClick={() => setRef(registerRef)}
+                  >
                     등록
                   </button>
                 </div>
@@ -85,7 +107,10 @@ export default function Home() {
                   <img src="ggrf_1.jpeg" />
                 </div>
               </div>
-              <div className="mt-32 text-base font-semibold text-gray-800">
+              <div
+                className="mt-32 text-base font-semibold text-gray-800"
+                ref={contentRef}
+              >
                 프로그램
               </div>
               <div className="grid grid-cols-2 gap-2 px-5 sm:px-0 mt-6">
@@ -126,16 +151,22 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <PartyForm />
-              <div className="mt-32 text-base font-semibold text-gray-800 px-4 sm:px-0">
+              <PartyForm ref={registerRef} />
+              <div
+                className="mt-32 text-base font-semibold text-gray-800 px-4 sm:px-0"
+                ref={placeRef}
+              >
                 장소
-                <div className="text-sm font-medium mt-4 text-left">경성홀</div>
-                {/* <KakaoMap address="서울 신촌로10길 9" /> */}
+                <div className="text-sm font-medium mt-4 text-left pb-2">
+                  서울 마포구 신촌로16길 30 지하 1층 경성홀
+                </div>
+                <KakaoMap />
               </div>
               {/* <div className="mt-32 px-4 sm:px-0">
                 <InstaEmbed />
               </div> */}
             </div>
+            <WebShare />
             <div className="footer my-16">
               <div className="text-sm font-medium mt-8 text-left px-4 sm:px-0 block text-gray-800">
                 <div className="mt-32 text-sm font-medium">Contact</div>

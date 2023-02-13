@@ -1,35 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { Map, MapMarker } from "react-kakao-maps-sdk";
 
-// const KakaoMap = ({ address: any }) => {
-//   const [mapLoaded, setMapLoaded] = useState<boolean>(false);
+function KakaoMap() {
+  return (
+    <Map
+      center={{ lat: 37.5544852, lng: 126.9342196 }}
+      style={{ width: "100%", height: "280px" }}
+    >
+      <MapMarker position={{ lat: 37.5544852, lng: 126.9342196 }}></MapMarker>
+    </Map>
+  );
+}
 
-//     useEffect(() => {
-//         const $script = document.createElement("script");
-//         $script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAOMAP_KEY}`;
-//         $script.addEventListener("load", () => setMapLoaded(true));
-//         document.head.appendChild($script);
-//     }, []);
-
-//     useEffect(() => {
-//         if (!mapLoaded) return;
-
-//         kakao.maps.load(() => {
-//             var container = document.getElementById('map');
-//             var options = {
-//                       center: new kakao?.maps.LatLng(33.450701, 126.570667),
-//                       level: 3
-//                   };
-
-//             var map = new kakao?.maps.Map(container, options);
-
-//         })
-
-//       }, [mapLoaded]);
-
-//     return <div id="map" style={{
-//             width: "500px",
-//             height: "400px"
-//         }}></div>;
-// };
-
-// export default KakaoMap;
+export default KakaoMap;

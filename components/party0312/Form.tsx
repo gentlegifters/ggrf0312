@@ -18,7 +18,7 @@ type formValues = {
   message?: string;
 };
 
-export const PartyForm = ({}) => {
+export const PartyForm = ({ ref }) => {
   const formRef = useRef(null);
   const router = useRouter();
 
@@ -89,7 +89,7 @@ export const PartyForm = ({}) => {
   };
 
   return (
-    <div className="px-4 sm:px-8 mt-32">
+    <div className="px-4 sm:px-8 mt-32" ref={ref}>
       <div className="mt-20 text-base font-semibold text-gray-800">
         신청하기
       </div>
