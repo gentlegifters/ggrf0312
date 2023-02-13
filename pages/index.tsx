@@ -82,7 +82,7 @@ export default function Home() {
                   얼리버드 2월 17일까지
                 </div>
                 <div className="w-full mt-12">
-                  <img src="ggrf_1.JPEG" />
+                  <img src="ggrf_1.jpeg" />
                 </div>
               </div>
               <div className="mt-32 text-base font-semibold text-gray-800">
