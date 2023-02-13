@@ -5,7 +5,7 @@ import Link from "next/link";
 import { passOutType } from "@/constants/ggrf0312";
 import { PartyForm } from "@/components/party0312/Form";
 import { InstaEmbed } from "@/components/party0312/InstaEmbed";
-import KakaoMap from "@/components/party0312/KakaoMap";
+// import KakaoMap from "@/components/party0312/KakaoMap";
 
 export default function Home() {
   const Contents = ["영화 상영", "스윙댄스 강습", "소셜 파티", "공연"];
