@@ -130,7 +130,7 @@ export default function Home() {
               <div className="mt-32 text-base font-semibold text-gray-800 px-4 sm:px-0">
                 장소
                 <div className="text-sm font-medium mt-4 text-left">경성홀</div>
-                <KakaoMap address="서울 신촌로10길 9" />
+                {/* <KakaoMap address="서울 신촌로10길 9" /> */}
               </div>
               <div className="mt-32 px-4 sm:px-0">
                 <InstaEmbed />
