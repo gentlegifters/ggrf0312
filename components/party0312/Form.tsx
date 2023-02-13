@@ -18,7 +18,11 @@ type formValues = {
   message?: string;
 };
 
-export const PartyForm = ({ ref }) => {
+type Props = {
+  ref: HTMLElement;
+};
+
+export const PartyForm = ({ ref }: Props) => {
   const formRef = useRef(null);
   const router = useRouter();
 
