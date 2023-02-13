@@ -56,13 +56,14 @@ export const PartyForm = ({}) => {
       plainText: false,
     });
     const scriptURL: any = process.env.NEXT_PUBLIC_SCRIPT_URL;
+    const registerData = new FormData(formRef.current as any);
     await fetch(scriptURL, {
       method: "POST",
       mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
-      body: new FormData(formRef.current),
+      body: ,
     })
       .then((res) => {
         Report.success(
