@@ -63,7 +63,7 @@ export const PartyForm = ({}) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: ,
+      body: registerData,
     })
       .then((res) => {
         Report.success(
